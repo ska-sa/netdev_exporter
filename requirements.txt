@@ -1,0 +1,12 @@
+aiohttp
+async-timeout             # via aiohttp
+chardet                   # via aiohttp
+idna-ssl                  # via aiohttp
+idna                      # via idna-ssl, yarl
+multidict                 # via aiohttp, yarl
+netifaces                 # via katsdpservices
+prometheus_client==0.3.1
+pygelf                    # via katsdpservices
+yarl                      # via aiohttp
+
+git+ssh://git@github.com/ska-sa/katsdpservices

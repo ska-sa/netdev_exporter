@@ -28,7 +28,7 @@ ETHTOOL_COUNTERS = [
     'rx_oversize_packets_phy',
     'rx_buffer_passed_thres_phy',
     'rx_pci_signal_integrity',
-    'tx_pci_signal_integrity',
+    'tx_pci_signal_integrity'
 ]
 
 RDMA_COUNTERS = [
@@ -110,7 +110,7 @@ def update_rdma(device: str, ibdev: str, port: int, counters: Mapping[str, Count
     base = pathlib.Path('/sys/class/infiniband/{}/ports/{}/hw_counters'.format(ibdev, port))
     for name, counter in counters.items():
         try:
-            with open(base / name, 'r') as f:
+            with (base / name).open('r') as f:
                 value = int(f.read())
         except (OSError, ValueError):
             pass
@@ -147,15 +147,14 @@ def get_arguments() -> argparse.Namespace:
     parser.add_argument(
         '--bind', help='Web server local address')
     parser.add_argument(
-        '--log-level', help='Log level [INFO]')
+        '--log-level', default='INFO', help='Log level [%(default)s]')
     return parser.parse_args()
 
 
 def main() -> None:
     args = get_arguments()
     katsdpservices.setup_logging()
-    if args.log_level:
-        logging.root.setLevel(args.log_level.upper())
+    logging.root.setLevel(args.log_level.upper())
 
     app = web.Application()
     app.router.add_get('/metrics', get_metrics)

@@ -118,7 +118,8 @@ def update_rdma(device: str, ibdev: str, port: int, counters: Mapping[str, Count
                 value = int(f.read())
         except (OSError, ValueError):
             pass
-        counter.labels(device).inc(value)
+        else:
+            counter.labels(device).inc(value)
 
 
 async def get_counters() -> CollectorRegistry:

@@ -151,7 +151,7 @@ def get_arguments() -> argparse.Namespace:
     parser.add_argument(
         '--bind', help='Web server local address')
     parser.add_argument(
-        '--log-level', default='INFO', help='Log level [%(default)s]')
+        '--log-level', default='WARNING', help='Log level [%(default)s]')
     return parser.parse_args()
 
 

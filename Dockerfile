@@ -17,9 +17,10 @@ RUN cd /tmp/install/netdev_exporter && \
 
 FROM sdp-docker-registry.kat.ac.za:5000/docker-base-runtime
 
-# Install ethtool
+# Install ethtool and ibdev2netdev
 USER root
 RUN apt-get update && apt-get -y install ethtool && apt-get clean
+COPY ibdev2netdev /usr/bin/
 USER kat
 
 COPY --chown=kat:kat --from=build /home/kat/ve3 /home/kat/ve3

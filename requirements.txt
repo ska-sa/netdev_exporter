@@ -9,4 +9,4 @@ prometheus_client==0.3.1
 pygelf                    # via katsdpservices
 yarl                      # via aiohttp
 
-git+ssh://git@github.com/ska-sa/katsdpservices
+katsdpservices @ git+https://git@github.com/ska-sa/katsdpservices

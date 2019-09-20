@@ -4,8 +4,8 @@ from setuptools import setup, find_packages
 
 setup(
     name='netdev_exporter',
-    author='Bruce Merry',
-    author_email='bmerry@ska.ac.za',
+    author='MeerKAT SDP team',
+    author_email='sdpdev+netdev_exporter@ska.ac.za',
     description='Prometheus exporter for assorted NIC performance counters',
     packages=['netdev_exporter'],
     setup_requires=['katversion'],

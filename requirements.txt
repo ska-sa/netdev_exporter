@@ -1,14 +1,6 @@
+-c https://raw.githubusercontent.com/ska-sa/katsdpdockerbase/master/docker-base-build/base-requirements.txt
+
 aiohttp
-async-timeout             # via aiohttp
-attrs                     # via aiohttp
-chardet                   # via aiohttp
-idna-ssl                  # via aiohttp
-idna                      # via idna-ssl, yarl
-multidict                 # via aiohttp, yarl
-netifaces                 # via katsdpservices
 prometheus_client==0.3.1
-pygelf                    # via katsdpservices
-typing-extensions         # via aiohttp
-yarl                      # via aiohttp
 
 katsdpservices @ git+https://github.com/ska-sa/katsdpservices

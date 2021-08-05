@@ -98,7 +98,8 @@ async def update_ethtool(device: str, counters: Mapping[str, Counter]) -> None:
         '/sbin/ethtool', '-S', device, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
     (stdout_data, stderr_data) = await process.communicate()
     if process.returncode != 0:
-        logging.warning('ethtool failed: ' + stderr_data.decode('utf-8', errors='replace'))
+        if process.returncode != 94:  # returned by ethtool if no stats are available
+            logging.warning('ethtool failed: ' + stderr_data.decode('utf-8', errors='replace'))
         return
     for line in stdout_data.splitlines():
         text = line.decode('utf-8', errors='replace')

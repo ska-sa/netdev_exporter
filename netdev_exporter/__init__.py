@@ -16,6 +16,9 @@ import katsdpservices
 
 ETHTOOL_COUNTERS = [
     'rx_discards_phy',
+    'rx_prio0_discards',
+    'rx_prio0_buf_discard',
+    'rx_prio0_cong_discard',
     'rx_steer_missed_packets',
     'rx_out_of_buffer',
     'rx_mpwqe_filler',
@@ -32,7 +35,9 @@ ETHTOOL_COUNTERS = [
     'rx_oversize_packets_phy',
     'rx_buffer_passed_thres_phy',
     'rx_pci_signal_integrity',
-    'tx_pci_signal_integrity'
+    'tx_pci_signal_integrity',
+    'rx_multicast_phy',
+    'tx_multicast_phy'
 ]
 
 RDMA_COUNTERS = [

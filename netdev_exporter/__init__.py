@@ -41,7 +41,7 @@ ETHTOOL_COUNTERS = [
     'tx_cqe_err',
     'tx_dropped',
     'tx_fifo_errors',
-    'tx_multicast_phy'
+    'tx_multicast_phy',
     'tx_pci_signal_integrity',
     'tx_queue_stopped',
 ]

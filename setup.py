@@ -12,7 +12,7 @@ setup(
     python_requires='>=3.5',
     install_requires=[
         'aiohttp',
-        'prometheus_client<0.4.0',
+        'prometheus_client',
         'katsdpservices'
     ],
     entry_points={
